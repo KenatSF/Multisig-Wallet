@@ -156,7 +156,7 @@ contract('Multisignature contract.', () => {
       console.log('-----------------------------------------------------------');
       console.log('Submit a proposal & First confirmation');
 
-      const proposal = await contract_submit_transaction(contract.address, signer_2, address_10, 10, 3350, 3400, 0x00);
+      const proposal = await contract_submit_transaction(contract.address, signer_2, address_10, 10, 3000, 3500, 0x00);
       console.log(" ");
       console.log(`Submit hash: ${proposal.hash}`);
       
