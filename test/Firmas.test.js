@@ -39,7 +39,7 @@ async function contract_cancel_confirmation(_contract_address, _signer, index) {
 }
 async function contract_execute_transaction(_contract_address, _signer, index) {
   const contract = new Contract(_contract_address, CONTRACT_ABI, _signer);
-  return await contract.excute_transaction(index, {gasPrice: 75000000000, gasLimit: 800000})
+  return await contract.execute_transaction(index, {gasPrice: 75000000000, gasLimit: 800000})
 }
 
 async function contract_get_price(_contract_address, _provider, index) {
