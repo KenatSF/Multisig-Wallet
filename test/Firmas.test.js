@@ -156,7 +156,7 @@ contract('Multisignature contract.', () => {
       console.log('-----------------------------------------------------------');
       console.log('Submit a proposal & First confirmation');
 
-      const proposal = await contract_submit_transaction(contract.address, signer_2, address_10, 10, 3000, 3500, 0x00);
+      const proposal = await contract_submit_transaction(contract.address, signer_2, address_10, 10, 2400, 2600, 0x00);
       console.log(" ");
       console.log(`Submit hash: ${proposal.hash}`);
       
@@ -172,6 +172,12 @@ contract('Multisignature contract.', () => {
       console.log(" ");
       console.log(`Confirm hash: ${proposal_confirm2.hash}`);
       console.log(" ");
+
+      console.log('-----------------------------------------------------------');
+      console.log('Get ETH price in USD: ');
+
+      const price = await contract_get_price(contract.address, provider);
+      console.log(`ETH price in usd: ${ethers.utils.formatUnits(price, 8)}`);   
 
       console.log('-----------------------------------------------------------');
       console.log('Execution of the proposal');
@@ -204,11 +210,7 @@ contract('Multisignature contract.', () => {
       console.log(`Contract balance in ETH :${ethers.utils.formatEther(contract_bal)}`);
       console.log(" ");
 
-      console.log('-----------------------------------------------------------');
-      console.log('Get ETH price in USD: ');
-
-      const price = await contract_get_price(contract.address, provider);
-      console.log(`ETH price in usd: ${ethers.utils.formatUnits(price, 8)}`);   // ETH price returned: 3363
+      
 
 
       console.log('------------   END   ----------------------------------------------------------------------------------------------');

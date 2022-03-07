@@ -185,41 +185,41 @@ contract Firmas is PriceConsumerV3 {
 
         emit ExecuteTransaction(msg.sender, _tx_index);
     }
-    /*function execute_transaction(uint _tx_index) public onlyOwner txExists(_tx_index) notExecuted(_tx_index) { // Gas cost: 71489
-        //Transaction storage transaction = transactions[_tx_index];
+    // function execute_transaction(uint _tx_index) public onlyOwner txExists(_tx_index) notExecuted(_tx_index) { // Gas cost: 71489
+    //     //Transaction storage transaction = transactions[_tx_index];
 
-        require(
-            transactions[_tx_index].confirmations >= confirmations_num,
-            "cannot execute tx"
-        );
+    //     require(
+    //         transactions[_tx_index].confirmations >= confirmations_num,
+    //         "cannot execute tx"
+    //     );
 
-        transactions[_tx_index].executed = true;
-        address payable to = payable(transactions[_tx_index].to);
+    //     transactions[_tx_index].executed = true;
+    //     address payable to = payable(transactions[_tx_index].to);
 
-        (bool success, ) = to.call{value: transactions[_tx_index].value}( 
-            transactions[_tx_index].data
-        ); // returned: (true or false, bytes from fallback function)
-        require(success, "tx failed");
+    //     (bool success, ) = to.call{value: transactions[_tx_index].value}( 
+    //         transactions[_tx_index].data
+    //     ); // returned: (true or false, bytes from fallback function)
+    //     require(success, "tx failed");
 
-        emit ExecuteTransaction(msg.sender, _tx_index);
-    }*/
-    /*function execute_transaction(uint _tx_index) public onlyOwner txExists(_tx_index) notExecuted(_tx_index) { // Gas cost: 72258
-        Transaction memory transaction = transactions[_tx_index];
+    //     emit ExecuteTransaction(msg.sender, _tx_index);
+    // }
+    // function execute_transaction(uint _tx_index) public onlyOwner txExists(_tx_index) notExecuted(_tx_index) { // Gas cost: 72258
+    //     Transaction memory transaction = transactions[_tx_index];
 
-        require(
-            transaction.confirmations >= confirmations_num,
-            "cannot execute tx"
-        );
+    //     require(
+    //         transaction.confirmations >= confirmations_num,
+    //         "cannot execute tx"
+    //     );
 
-        transactions[_tx_index].executed = true;
+    //     transactions[_tx_index].executed = true;
 
-        (bool success, ) = transactions[_tx_index].to.call{value: transaction.value}(
-            transaction.data
-        );
-        require(success, "tx failed");
+    //     (bool success, ) = transactions[_tx_index].to.call{value: transaction.value}(
+    //         transaction.data
+    //     );
+    //     require(success, "tx failed");
 
-        emit ExecuteTransaction(msg.sender, _tx_index);
-    }*/
+    //     emit ExecuteTransaction(msg.sender, _tx_index);
+    // }
 
     // ########################### Info functions
     function getTransactionCount() public view returns (uint) {
