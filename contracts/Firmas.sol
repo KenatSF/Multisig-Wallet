@@ -194,7 +194,9 @@ contract Firmas is PriceConsumerV3 {
     //     );
 
     //     transactions[_tx_index].executed = true;
-    //     address payable to = payable(transactions[_tx_index].to);
+    //     address to = payable(transactions[_tx_index].to); // Correct sintaxis
+    //     // Although it's not neccessary due to you are usgin .call() method and works with an address & address payable.
+    //     // If you were using transfer() or send(), that address payable would be required.
 
     //     (bool success, ) = to.call{value: transactions[_tx_index].value}( 
     //         transactions[_tx_index].data
